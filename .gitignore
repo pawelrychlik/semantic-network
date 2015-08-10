@@ -1,0 +1,8 @@
+.DS_Store
+node_modules
+bower_components
+coverage
+*.log
+*.sublime-workspace
+.idea
+components
