@@ -107,7 +107,3 @@ process.on('SIGINT', function() {
     printStats();
     process.exit();
 });
-
-// idea: run the whole thing twice:
-// 1. create only nodes (labels) in batches
-// 2. create only relationships (hypernyms, antonyms, see also, translations) in batches

@@ -4,8 +4,8 @@
   "main": "index.js",
   "private": true,
   "engines": {
-    "node": "0.10.26",
-    "npm": "2.3.0"
+    "node": "0.12.0",
+    "npm": "2.5.1"
   },
   "dependencies": {
     "lodash": "~2.4.1",
