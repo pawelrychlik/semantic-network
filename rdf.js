@@ -19,6 +19,7 @@ function testSaveNode() {
 // return testSaveNode();
 
 // var rdfStream = fs.createReadStream('./../wordnet-3.0-rdf/rdf/rdf/basic/void.ttl');
+// download the n-triple data form http://wordnet-rdf.princeton.edu direct link: http://wordnet-rdf.princeton.edu/wn31.nt.gz
 var rdfStream = fs.createReadStream('./../data/wordnet.nt');
 var streamParser = N3.StreamParser();
 rdfStream.pipe(streamParser);
@@ -84,3 +85,8 @@ process.on('SIGINT', function() {
 
     process.exit();
 });
+
+
+// idea: run the whole thing twice:
+// 1. create only nodes (labels) in batches
+// 2. create only relationships (hypernyms, antonyms, see also, translations) in batches
