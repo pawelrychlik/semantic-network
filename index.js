@@ -41,7 +41,9 @@ wordnet.lookup(word, function(synsets) {
 function findRelatedSynsets(synset, cb) {
     var filteredPointers = synset.ptrs;
     filteredPointers = synset.ptrs.filter(function(ptr) {
-        return ptr.pointerSymbol === "@";
+        return ptr.pointerSymbol === "@"; // only Hypernyms
+        // @see the pointer symbol table at https://wordnet.princeton.edu/wordnet/man/wnsearch.3WN.html
+        // return _.contains(['@', '!', '&', '^', ';', '-'], ptr.pointerSymbol);
     });
 
     wordnet.loadSynonyms([], [], _.clone(filteredPointers), function(relatedSynsets) {
